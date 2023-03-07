@@ -7,6 +7,3 @@ src/CMakeFiles/add.dir/ServerSocket.cpp.o: ../src/ServerSocket.cpp
 src/CMakeFiles/add.dir/YOLO.cpp.o: ../include/YOLO.h
 src/CMakeFiles/add.dir/YOLO.cpp.o: ../src/YOLO.cpp
 
-src/CMakeFiles/add.dir/add.cpp.o: ../include/add.h
-src/CMakeFiles/add.dir/add.cpp.o: ../src/add.cpp
-

@@ -179,33 +179,6 @@ YOLO.cpp.s:
 	cd /home/zlx/zlx/c++code/build && $(MAKE) -f src/CMakeFiles/add.dir/build.make src/CMakeFiles/add.dir/YOLO.cpp.s
 .PHONY : YOLO.cpp.s
 
-add.o: add.cpp.o
-
-.PHONY : add.o
-
-# target to build an object file
-add.cpp.o:
-	cd /home/zlx/zlx/c++code/build && $(MAKE) -f src/CMakeFiles/add.dir/build.make src/CMakeFiles/add.dir/add.cpp.o
-.PHONY : add.cpp.o
-
-add.i: add.cpp.i
-
-.PHONY : add.i
-
-# target to preprocess a source file
-add.cpp.i:
-	cd /home/zlx/zlx/c++code/build && $(MAKE) -f src/CMakeFiles/add.dir/build.make src/CMakeFiles/add.dir/add.cpp.i
-.PHONY : add.cpp.i
-
-add.s: add.cpp.s
-
-.PHONY : add.s
-
-# target to generate assembly for a file
-add.cpp.s:
-	cd /home/zlx/zlx/c++code/build && $(MAKE) -f src/CMakeFiles/add.dir/build.make src/CMakeFiles/add.dir/add.cpp.s
-.PHONY : add.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -221,9 +194,6 @@ help:
 	@echo "... YOLO.o"
 	@echo "... YOLO.i"
 	@echo "... YOLO.s"
-	@echo "... add.o"
-	@echo "... add.i"
-	@echo "... add.s"
 .PHONY : help
 
 

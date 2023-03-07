@@ -3,7 +3,6 @@ file(REMOVE_RECURSE
   "../lib/libadd.pdb"
   "CMakeFiles/add.dir/ServerSocket.cpp.o"
   "CMakeFiles/add.dir/YOLO.cpp.o"
-  "CMakeFiles/add.dir/add.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.

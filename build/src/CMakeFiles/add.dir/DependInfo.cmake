@@ -6,7 +6,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/zlx/zlx/c++code/src/ServerSocket.cpp" "/home/zlx/zlx/c++code/build/src/CMakeFiles/add.dir/ServerSocket.cpp.o"
   "/home/zlx/zlx/c++code/src/YOLO.cpp" "/home/zlx/zlx/c++code/build/src/CMakeFiles/add.dir/YOLO.cpp.o"
-  "/home/zlx/zlx/c++code/src/add.cpp" "/home/zlx/zlx/c++code/build/src/CMakeFiles/add.dir/add.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
