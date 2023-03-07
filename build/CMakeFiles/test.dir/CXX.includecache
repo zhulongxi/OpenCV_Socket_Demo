@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zlx/zlx/c++code/include/add.h
+iostream
+-
+
+/home/zlx/zlx/c++code/test.cpp
+iostream
+-
+string
+-
+vector
+-
+opencv2/core/core.hpp
+-
+opencv2/highgui/highgui.hpp
+-
+opencv2/opencv.hpp
+-
+include/add.h
+/home/zlx/zlx/c++code/include/add.h
+

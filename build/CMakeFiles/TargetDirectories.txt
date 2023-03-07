@@ -1,0 +1,6 @@
+/home/zlx/zlx/c++code/build/CMakeFiles/rebuild_cache.dir
+/home/zlx/zlx/c++code/build/CMakeFiles/edit_cache.dir
+/home/zlx/zlx/c++code/build/CMakeFiles/main.dir
+/home/zlx/zlx/c++code/build/src/CMakeFiles/rebuild_cache.dir
+/home/zlx/zlx/c++code/build/src/CMakeFiles/edit_cache.dir
+/home/zlx/zlx/c++code/build/src/CMakeFiles/add.dir

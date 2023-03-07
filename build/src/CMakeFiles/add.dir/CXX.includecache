@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/YOLO.h
+opencv2/opencv.hpp
+-
+vector
+-
+string
+-
+
+/home/zlx/zlx/c++code/src/YOLO.cpp
+YOLO.h
+/home/zlx/zlx/c++code/src/YOLO.h
+fstream
+-
+opencv2/opencv.hpp
+-
+vector
+-
+string
+-
+

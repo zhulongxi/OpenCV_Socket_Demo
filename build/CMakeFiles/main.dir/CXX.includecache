@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zlx/zlx/c++code/include/ServerSocket.h
+netinet/in.h
+-
+string
+-
+
+/home/zlx/zlx/c++code/include/YOLO.h
+opencv2/opencv.hpp
+-
+vector
+-
+string
+-
+
+/home/zlx/zlx/c++code/main.cpp
+include/ServerSocket.h
+/home/zlx/zlx/c++code/include/ServerSocket.h
+include/YOLO.h
+/home/zlx/zlx/c++code/include/YOLO.h
+string
+-
+
