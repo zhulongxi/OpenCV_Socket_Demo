@@ -34,12 +34,12 @@ ServerSocket::ServerSocket(std::string address, int port) {
 }
 
 ServerSocket::~ServerSocket() {
-    close(connect_fd);
     close(socket_fd);
 }
 
 void ServerSocket::Receive() {
     while(true) {
+        int connect_fd;
         connect_fd = accept(socket_fd, (struct sockaddr*)NULL, NULL);
         if(connect_fd == -1) {
             std::cout << "accept socket error: " << errno << std::endl;
@@ -55,7 +55,12 @@ void ServerSocket::Receive() {
         while(1) {		
 		    //接受客户端传过来的数据
             memset(buff, 0, sizeof(buff));
-		    n = recv(connect_fd, buff, MAXLINE, 0);				
+		    n = recv(connect_fd, buff, MAXLINE, 0);
+            if(n <= 0) {
+                std::cout << "client close" << std::endl;
+                close(connect_fd);
+                break;
+            }
 		    buff[n] = '\0';
             std::cout << "recv msg from client: " << buff << std::endl;
 		
