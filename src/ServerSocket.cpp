@@ -48,7 +48,25 @@ void ServerSocket::Receive() {
         else {
             std::cout << "client connected!" << std::endl;
         }
-
-        
+        int n;
+        char   buff[1024];
+        char   sendline[1024];
+        const int MAXLINE = 1024;
+        while(1) {		
+		    //接受客户端传过来的数据
+            memset(buff, 0, sizeof(buff));
+		    n = recv(connect_fd, buff, MAXLINE, 0);				
+		    buff[n] = '\0';
+            std::cout << "recv msg from client: " << buff << std::endl;
+		
+		    //给客户端发送消息
+            std::cout << "send msg to client:" ;
+            // 从stdin获取输入
+		    fgets(sendline, MAXLINE, stdin);
+		    if( send(connect_fd, sendline, strlen(sendline), 0) < 0) {
+                std::cout << "send msg error: " << errno << std::endl;
+			    exit(0);
+		    }	
+        }
     }
 }

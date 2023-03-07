@@ -23,13 +23,9 @@ void Draw(YOLO& net, cv::Mat& image) {
 		cv::rectangle(image, cv::Point(box.x, box.y - 20), cv::Point(box.x + box.width, box.y), color, cv::FILLED);
 		cv::putText(image, class_list[classId].c_str(), cv::Point(box.x, box.y - 5), cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0, 0, 0));
 	}
-
-
-	cv::imwrite("./1.jpg", image);
 }
 
 int main(int argc, char **argv) {
-    ServerSocket server("127.0.0.1", 8000);
 
     // 初始化路径
     std::string imagepath = "../image/1.jpg";
@@ -47,8 +43,13 @@ int main(int argc, char **argv) {
     net.Detect(image);
 
     // 绘制检测框
-    
     Draw(net, image);
+    // 保存结果
+    cv::imwrite("./1.jpg", image);
+
+    // 初始化服务端
+    ServerSocket server("127.0.0.1", 8000);
+    server.Receive();
     
 	return 0;
 }
