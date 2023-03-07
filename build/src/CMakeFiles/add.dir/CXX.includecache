@@ -6,22 +6,24 @@
 
 #IncludeRegexTransform: 
 
-../include/YOLO.h
-opencv2/opencv.hpp
--
-vector
+../include/ServerSocket.h
+netinet/in.h
 -
 string
 -
 
-/home/zlx/zlx/c++code/src/YOLO.cpp
-YOLO.h
-/home/zlx/zlx/c++code/src/YOLO.h
-fstream
+/home/zlx/zlx/c++code/src/ServerSocket.cpp
+ServerSocket.h
+/home/zlx/zlx/c++code/src/ServerSocket.h
+sys/socket.h
 -
-opencv2/opencv.hpp
+iostream
 -
-vector
+string.h
+-
+arpa/inet.h
+-
+unistd.h
 -
 string
 -
