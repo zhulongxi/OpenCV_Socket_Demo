@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../lib/libadd.a  CMakeFiles/add.dir/ClientSocket.cpp.o CMakeFiles/add.dir/ServerSocket.cpp.o CMakeFiles/add.dir/YOLO.cpp.o
-/usr/bin/ranlib ../lib/libadd.a

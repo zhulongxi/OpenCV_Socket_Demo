@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../lib/libsrc.a  CMakeFiles/src.dir/ClientSocket.cpp.o CMakeFiles/src.dir/ServerSocket.cpp.o CMakeFiles/src.dir/YOLO.cpp.o
-/usr/bin/ranlib ../lib/libsrc.a
