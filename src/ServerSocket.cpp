@@ -15,11 +15,11 @@ ServerSocket::ServerSocket(std::string address, int port) {
     }
 
     // 绑定套接字
-    memset(&servaddr, 0, sizeof(servaddr));
-    servaddr.sin_family = AF_INET;
-    servaddr.sin_addr.s_addr = inet_addr(address.c_str());
-    servaddr.sin_port = htons(port);
-    if( bind(socket_fd, (struct sockaddr*)&servaddr, sizeof(servaddr)) == -1) {
+    memset(&serveraddr, 0, sizeof(serveraddr));
+    serveraddr.sin_family = AF_INET;
+    serveraddr.sin_addr.s_addr = inet_addr(address.c_str());
+    serveraddr.sin_port = htons(port);
+    if( bind(socket_fd, (struct sockaddr*)&serveraddr, sizeof(serveraddr)) == -1) {
         std::cout << "bind socket error: " << errno << std::endl;
 		exit(0);
     }
@@ -49,8 +49,8 @@ void ServerSocket::Receive() {
             std::cout << "client connected!" << std::endl;
         }
         int n;
-        char   buff[1024];
-        char   sendline[1024];
+        char buff[1024];
+        char sendline[1024] = {"Hello World!\n\0"};
         const int MAXLINE = 1024;
         while(1) {		
 		    //接受客户端传过来的数据
@@ -64,11 +64,12 @@ void ServerSocket::Receive() {
 		    buff[n] = '\0';
             std::cout << "recv msg from client: " << buff << std::endl;
 		
-		    //给客户端发送消息
-            std::cout << "send msg to client:" ;
+		    // 给客户端发送消息
+            // std::cout << "send msg to client:" ;
             // 从stdin获取输入
-		    fgets(sendline, MAXLINE, stdin);
-		    if( send(connect_fd, sendline, strlen(sendline), 0) < 0) {
+		    // fgets(sendline, MAXLINE, stdin);
+            char sendline[1024] = {"Hello World!\n"};
+		    if( send(connect_fd, sendline, strlen(sendline), 0) <= 0) {
                 std::cout << "send msg error: " << errno << std::endl;
 			    exit(0);
 		    }	

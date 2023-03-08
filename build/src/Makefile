@@ -111,19 +111,46 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/CMakeFiles/add.dir/rule:
-	cd /home/zlx/zlx/c++code/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/add.dir/rule
-.PHONY : src/CMakeFiles/add.dir/rule
+src/CMakeFiles/source.dir/rule:
+	cd /home/zlx/zlx/c++code/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/source.dir/rule
+.PHONY : src/CMakeFiles/source.dir/rule
 
 # Convenience name for target.
-add: src/CMakeFiles/add.dir/rule
+source: src/CMakeFiles/source.dir/rule
 
-.PHONY : add
+.PHONY : source
 
 # fast build rule for target.
-add/fast:
-	cd /home/zlx/zlx/c++code/build && $(MAKE) -f src/CMakeFiles/add.dir/build.make src/CMakeFiles/add.dir/build
-.PHONY : add/fast
+source/fast:
+	cd /home/zlx/zlx/c++code/build && $(MAKE) -f src/CMakeFiles/source.dir/build.make src/CMakeFiles/source.dir/build
+.PHONY : source/fast
+
+ClientSocket.o: ClientSocket.cpp.o
+
+.PHONY : ClientSocket.o
+
+# target to build an object file
+ClientSocket.cpp.o:
+	cd /home/zlx/zlx/c++code/build && $(MAKE) -f src/CMakeFiles/source.dir/build.make src/CMakeFiles/source.dir/ClientSocket.cpp.o
+.PHONY : ClientSocket.cpp.o
+
+ClientSocket.i: ClientSocket.cpp.i
+
+.PHONY : ClientSocket.i
+
+# target to preprocess a source file
+ClientSocket.cpp.i:
+	cd /home/zlx/zlx/c++code/build && $(MAKE) -f src/CMakeFiles/source.dir/build.make src/CMakeFiles/source.dir/ClientSocket.cpp.i
+.PHONY : ClientSocket.cpp.i
+
+ClientSocket.s: ClientSocket.cpp.s
+
+.PHONY : ClientSocket.s
+
+# target to generate assembly for a file
+ClientSocket.cpp.s:
+	cd /home/zlx/zlx/c++code/build && $(MAKE) -f src/CMakeFiles/source.dir/build.make src/CMakeFiles/source.dir/ClientSocket.cpp.s
+.PHONY : ClientSocket.cpp.s
 
 ServerSocket.o: ServerSocket.cpp.o
 
@@ -131,7 +158,7 @@ ServerSocket.o: ServerSocket.cpp.o
 
 # target to build an object file
 ServerSocket.cpp.o:
-	cd /home/zlx/zlx/c++code/build && $(MAKE) -f src/CMakeFiles/add.dir/build.make src/CMakeFiles/add.dir/ServerSocket.cpp.o
+	cd /home/zlx/zlx/c++code/build && $(MAKE) -f src/CMakeFiles/source.dir/build.make src/CMakeFiles/source.dir/ServerSocket.cpp.o
 .PHONY : ServerSocket.cpp.o
 
 ServerSocket.i: ServerSocket.cpp.i
@@ -140,7 +167,7 @@ ServerSocket.i: ServerSocket.cpp.i
 
 # target to preprocess a source file
 ServerSocket.cpp.i:
-	cd /home/zlx/zlx/c++code/build && $(MAKE) -f src/CMakeFiles/add.dir/build.make src/CMakeFiles/add.dir/ServerSocket.cpp.i
+	cd /home/zlx/zlx/c++code/build && $(MAKE) -f src/CMakeFiles/source.dir/build.make src/CMakeFiles/source.dir/ServerSocket.cpp.i
 .PHONY : ServerSocket.cpp.i
 
 ServerSocket.s: ServerSocket.cpp.s
@@ -149,7 +176,7 @@ ServerSocket.s: ServerSocket.cpp.s
 
 # target to generate assembly for a file
 ServerSocket.cpp.s:
-	cd /home/zlx/zlx/c++code/build && $(MAKE) -f src/CMakeFiles/add.dir/build.make src/CMakeFiles/add.dir/ServerSocket.cpp.s
+	cd /home/zlx/zlx/c++code/build && $(MAKE) -f src/CMakeFiles/source.dir/build.make src/CMakeFiles/source.dir/ServerSocket.cpp.s
 .PHONY : ServerSocket.cpp.s
 
 YOLO.o: YOLO.cpp.o
@@ -158,7 +185,7 @@ YOLO.o: YOLO.cpp.o
 
 # target to build an object file
 YOLO.cpp.o:
-	cd /home/zlx/zlx/c++code/build && $(MAKE) -f src/CMakeFiles/add.dir/build.make src/CMakeFiles/add.dir/YOLO.cpp.o
+	cd /home/zlx/zlx/c++code/build && $(MAKE) -f src/CMakeFiles/source.dir/build.make src/CMakeFiles/source.dir/YOLO.cpp.o
 .PHONY : YOLO.cpp.o
 
 YOLO.i: YOLO.cpp.i
@@ -167,7 +194,7 @@ YOLO.i: YOLO.cpp.i
 
 # target to preprocess a source file
 YOLO.cpp.i:
-	cd /home/zlx/zlx/c++code/build && $(MAKE) -f src/CMakeFiles/add.dir/build.make src/CMakeFiles/add.dir/YOLO.cpp.i
+	cd /home/zlx/zlx/c++code/build && $(MAKE) -f src/CMakeFiles/source.dir/build.make src/CMakeFiles/source.dir/YOLO.cpp.i
 .PHONY : YOLO.cpp.i
 
 YOLO.s: YOLO.cpp.s
@@ -176,7 +203,7 @@ YOLO.s: YOLO.cpp.s
 
 # target to generate assembly for a file
 YOLO.cpp.s:
-	cd /home/zlx/zlx/c++code/build && $(MAKE) -f src/CMakeFiles/add.dir/build.make src/CMakeFiles/add.dir/YOLO.cpp.s
+	cd /home/zlx/zlx/c++code/build && $(MAKE) -f src/CMakeFiles/source.dir/build.make src/CMakeFiles/source.dir/YOLO.cpp.s
 .PHONY : YOLO.cpp.s
 
 # Help Target
@@ -187,7 +214,10 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... add"
+	@echo "... source"
+	@echo "... ClientSocket.o"
+	@echo "... ClientSocket.i"
+	@echo "... ClientSocket.s"
 	@echo "... ServerSocket.o"
 	@echo "... ServerSocket.i"
 	@echo "... ServerSocket.s"

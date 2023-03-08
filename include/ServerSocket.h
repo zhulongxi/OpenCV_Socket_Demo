@@ -8,7 +8,7 @@ class ServerSocket
 private:
     /* data */
     int socket_fd;
-    struct sockaddr_in  servaddr;
+    struct sockaddr_in  serveraddr;
 public:
     ServerSocket(std::string address, int port);
     ~ServerSocket();

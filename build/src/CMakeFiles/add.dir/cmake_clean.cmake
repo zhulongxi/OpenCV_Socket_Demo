@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../lib/libadd.a"
   "../lib/libadd.pdb"
+  "CMakeFiles/add.dir/ClientSocket.cpp.o"
   "CMakeFiles/add.dir/ServerSocket.cpp.o"
   "CMakeFiles/add.dir/YOLO.cpp.o"
 )

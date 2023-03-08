@@ -9,6 +9,6 @@ include_directories(../include)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
  
 # 生成链接库
-add_library(add ${DIR_LIB_SRCS})
+add_library(source ${DIR_LIB_SRCS})
  
-message(STATUS "----------生成静态库完成----------" ${PROJECT_SOURCE_DIR}/add)
+message(STATUS "----------生成静态库完成----------" ${PROJECT_SOURCE_DIR}/source)

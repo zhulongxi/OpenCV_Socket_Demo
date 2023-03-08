@@ -19,12 +19,14 @@ add_subdirectory(src)
 
 # add_executable(test ${SRC_LIST}) # 使用SRC_LIST的文件生成可执行文件test
 add_executable(main main.cpp)
-
+add_executable(client client.cpp)
 # 查找opencv required包
 find_package(OpenCV REQUIRED) 
 # test目标文件需要一个目标链接库OpenCV_LIBS
 target_link_libraries(main ${OpenCV_LIBS} ) 
+target_link_libraries(client ${OpenCV_LIBS} ) 
 
 # 添加链接库
 # 把子目录集src的编译成的库文件链接到这里
-target_link_libraries(main add)
+target_link_libraries(main source)
+target_link_libraries(client source) 

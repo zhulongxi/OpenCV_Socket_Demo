@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zlx/zlx/c++code/client.cpp
+include/ClientSocket.h
+/home/zlx/zlx/c++code/include/ClientSocket.h
+string
+-
+
+/home/zlx/zlx/c++code/include/ClientSocket.h
+netinet/in.h
+-
+string
+-
+

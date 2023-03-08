@@ -57,9 +57,22 @@ include src/CMakeFiles/add.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/CMakeFiles/add.dir/flags.make
 
+src/CMakeFiles/add.dir/ClientSocket.cpp.o: src/CMakeFiles/add.dir/flags.make
+src/CMakeFiles/add.dir/ClientSocket.cpp.o: ../src/ClientSocket.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zlx/zlx/c++code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/add.dir/ClientSocket.cpp.o"
+	cd /home/zlx/zlx/c++code/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/add.dir/ClientSocket.cpp.o -c /home/zlx/zlx/c++code/src/ClientSocket.cpp
+
+src/CMakeFiles/add.dir/ClientSocket.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/add.dir/ClientSocket.cpp.i"
+	cd /home/zlx/zlx/c++code/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zlx/zlx/c++code/src/ClientSocket.cpp > CMakeFiles/add.dir/ClientSocket.cpp.i
+
+src/CMakeFiles/add.dir/ClientSocket.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/add.dir/ClientSocket.cpp.s"
+	cd /home/zlx/zlx/c++code/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zlx/zlx/c++code/src/ClientSocket.cpp -o CMakeFiles/add.dir/ClientSocket.cpp.s
+
 src/CMakeFiles/add.dir/ServerSocket.cpp.o: src/CMakeFiles/add.dir/flags.make
 src/CMakeFiles/add.dir/ServerSocket.cpp.o: ../src/ServerSocket.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zlx/zlx/c++code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/add.dir/ServerSocket.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zlx/zlx/c++code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/add.dir/ServerSocket.cpp.o"
 	cd /home/zlx/zlx/c++code/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/add.dir/ServerSocket.cpp.o -c /home/zlx/zlx/c++code/src/ServerSocket.cpp
 
 src/CMakeFiles/add.dir/ServerSocket.cpp.i: cmake_force
@@ -72,7 +85,7 @@ src/CMakeFiles/add.dir/ServerSocket.cpp.s: cmake_force
 
 src/CMakeFiles/add.dir/YOLO.cpp.o: src/CMakeFiles/add.dir/flags.make
 src/CMakeFiles/add.dir/YOLO.cpp.o: ../src/YOLO.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zlx/zlx/c++code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/add.dir/YOLO.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zlx/zlx/c++code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/add.dir/YOLO.cpp.o"
 	cd /home/zlx/zlx/c++code/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/add.dir/YOLO.cpp.o -c /home/zlx/zlx/c++code/src/YOLO.cpp
 
 src/CMakeFiles/add.dir/YOLO.cpp.i: cmake_force
@@ -85,17 +98,19 @@ src/CMakeFiles/add.dir/YOLO.cpp.s: cmake_force
 
 # Object files for target add
 add_OBJECTS = \
+"CMakeFiles/add.dir/ClientSocket.cpp.o" \
 "CMakeFiles/add.dir/ServerSocket.cpp.o" \
 "CMakeFiles/add.dir/YOLO.cpp.o"
 
 # External object files for target add
 add_EXTERNAL_OBJECTS =
 
+lib/libadd.a: src/CMakeFiles/add.dir/ClientSocket.cpp.o
 lib/libadd.a: src/CMakeFiles/add.dir/ServerSocket.cpp.o
 lib/libadd.a: src/CMakeFiles/add.dir/YOLO.cpp.o
 lib/libadd.a: src/CMakeFiles/add.dir/build.make
 lib/libadd.a: src/CMakeFiles/add.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zlx/zlx/c++code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library ../lib/libadd.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zlx/zlx/c++code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library ../lib/libadd.a"
 	cd /home/zlx/zlx/c++code/build/src && $(CMAKE_COMMAND) -P CMakeFiles/add.dir/cmake_clean_target.cmake
 	cd /home/zlx/zlx/c++code/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/add.dir/link.txt --verbose=$(VERBOSE)
 

@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/zlx/zlx/c++code/src/ClientSocket.cpp" "/home/zlx/zlx/c++code/build/src/CMakeFiles/add.dir/ClientSocket.cpp.o"
   "/home/zlx/zlx/c++code/src/ServerSocket.cpp" "/home/zlx/zlx/c++code/build/src/CMakeFiles/add.dir/ServerSocket.cpp.o"
   "/home/zlx/zlx/c++code/src/YOLO.cpp" "/home/zlx/zlx/c++code/build/src/CMakeFiles/add.dir/YOLO.cpp.o"
   )
