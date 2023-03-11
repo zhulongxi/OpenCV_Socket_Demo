@@ -1,6 +1,10 @@
 #include "include/ServerSocket.h"
 #include "include/YOLO.h"
 #include <string>
+#include <csignal>
+
+// 初始化服务端，同时方便处理中断信号，释放资源，防止内存泄漏
+static ServerSocket server("127.0.0.1", 8000);
 
 void Draw(YOLO& net, cv::Mat& image) {
     // 获取检测结果
@@ -25,6 +29,15 @@ void Draw(YOLO& net, cv::Mat& image) {
 	}
 }
 
+void signalHandler( int signum ) {
+    std::cout << "Interrupt signal (" << signum << ") received." << std::endl;
+    // 清理并关闭
+    // 终止程序  
+    server.~ServerSocket();
+    exit(signum);  
+ 
+}
+
 int main(int argc, char **argv) {
 
     // 初始化路径
@@ -46,9 +59,10 @@ int main(int argc, char **argv) {
     Draw(net, image);
     // 保存结果
     cv::imwrite("./1.jpg", image);
-
-    // 初始化服务端
-    ServerSocket server("127.0.0.1", 8000);
+    
+    // 注册中断信号处理函数
+    signal(SIGINT, signalHandler); 
+    // 服务端开始接收
     server.Receive();
     
 	return 0;

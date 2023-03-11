@@ -13,6 +13,7 @@ public:
     ServerSocket(std::string address, int port);
     ~ServerSocket();
     void Receive();
+    void threadfunction(int connect_fd);
 };
 
 #endif

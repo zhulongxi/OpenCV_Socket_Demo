@@ -5,6 +5,7 @@
 #include <arpa/inet.h> // inet函数
 #include <unistd.h> // close(fd)
 #include <string>
+#include <thread>
 
 ServerSocket::ServerSocket(std::string address, int port) {
     // 创建套接字
@@ -43,36 +44,45 @@ void ServerSocket::Receive() {
         connect_fd = accept(socket_fd, (struct sockaddr*)NULL, NULL);
         if(connect_fd == -1) {
             std::cout << "accept socket error: " << errno << std::endl;
-            exit(0);
+            break;
         }
         else {
             std::cout << "client connected!" << std::endl;
         }
-        int n;
-        char buff[1024];
-        char sendline[1024] = {"Hello World!\n\0"};
-        const int MAXLINE = 1024;
-        while(1) {		
-		    //接受客户端传过来的数据
-            memset(buff, 0, sizeof(buff));
-		    n = recv(connect_fd, buff, MAXLINE, 0);
-            if(n <= 0) {
-                std::cout << "client close" << std::endl;
-                close(connect_fd);
-                break;
-            }
-		    buff[n] = '\0';
-            std::cout << "recv msg from client: " << buff << std::endl;
-		
-		    // 给客户端发送消息
-            // std::cout << "send msg to client:" ;
-            // 从stdin获取输入
-		    // fgets(sendline, MAXLINE, stdin);
-            char sendline[1024] = {"Hello World!\n"};
-		    if( send(connect_fd, sendline, strlen(sendline), 0) <= 0) {
-                std::cout << "send msg error: " << errno << std::endl;
-			    exit(0);
-		    }	
+        std::thread th(&ServerSocket::threadfunction, this, connect_fd);
+        if(th.joinable()) {
+            std::cout << "Tcp thread " << th.get_id() << " is joinable!" << std::endl;
+            th.detach();
         }
     }
+}
+
+void ServerSocket::threadfunction(int connect_fd) {
+    int n;
+    char buff[1024];
+    //char sendline[1024] = {"Hello World!\n\0"};
+    const int MAXLINE = 1024;
+    while(1) {		
+		//接受客户端传过来的数据
+        memset(buff, 0, sizeof(buff));
+	    n = recv(connect_fd, buff, MAXLINE, 0);
+        if(n <= 0) {
+            std::cout << "client close" << std::endl;
+            close(connect_fd);
+            break;
+        }
+	    buff[n] = '\0';
+        std::cout << "recv msg from client: " << buff << std::endl;
+	
+	    // 给客户端发送消息
+        // std::cout << "send msg to client:" ;
+        // 从stdin获取输入
+	    // fgets(sendline, MAXLINE, stdin);
+        char sendline[1024] = {"Hello World!\n"};
+	    if( send(connect_fd, sendline, strlen(sendline), 0) <= 0) {
+            std::cout << "send msg error: " << errno << std::endl;
+		    break;
+	    }	
+    }
+    close(connect_fd);
 }

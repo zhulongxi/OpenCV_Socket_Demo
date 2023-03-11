@@ -30,3 +30,5 @@ target_link_libraries(client ${OpenCV_LIBS} )
 # 把子目录集src的编译成的库文件链接到这里
 target_link_libraries(main source)
 target_link_libraries(client source) 
+
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
