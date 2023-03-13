@@ -5,6 +5,7 @@
 #include <arpa/inet.h> // inet函数
 #include <unistd.h> // close(fd)
 #include <string>
+#include <fstream>
 
 ClientSocket::ClientSocket(std::string address, int port) {
     // 创建套接字
@@ -35,18 +36,35 @@ void ClientSocket::Send() {
     char buff[1024];
     char sendline[1024];
     const int MAXLINE = 1024;
-    while (1)
-	{
-		std::cout << "send message: ";
-		std::cin >> sendline;
-		n = send(socket_fd, sendline, MAXLINE, 0);
-		if (n <= 0)
-		{
-			std::cout << "send failed!" << std::endl;
-			break;
-		}
+    while (true) {
+        // 发送文件名并打开文件
+		std::cout << "File Name : ";
+        std::string filename;
+		std::cin >> filename;
+        std::fstream f;
+        f.open(filename.c_str(), std::ios::in | std::ios::binary);
+        if(f.is_open() == false) {
+            std::cout << "File open failed!" << std::endl;
+            close(socket_fd);
+            exit(1);
+        }
+        // 传输文件
+        memset(sendline, 0, sizeof(sendline));
+        std::cout << "Sending..." << std::endl;
+        while(!f.eof()) {
+            f.read(sendline, MAXLINE);
+            n = f.gcount();
+            //if(len == 0 ) break;
+            if(n != send(socket_fd, sendline, n, 0)){
+                std::cout << "send failed!" << std::endl;
+                break;
+            }
+        }
+        // 关闭文件
+        f.close();
+        // 接受文件
         memset(buff, 0, sizeof(buff));
-		n = recv(socket_fd, buff, 1024, 0);
+		n = recv(socket_fd, buff, MAXLINE, 0);
 		if (n <= 0)
 		{
 			std::cout << "接受失败！" << std::endl;

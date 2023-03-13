@@ -11,10 +11,18 @@ netinet/in.h
 -
 string
 -
+YOLO.h
+../include/YOLO.h
+
+../include/YOLO.h
+opencv2/opencv.hpp
+-
+vector
+-
+string
+-
 
 /home/zlx/zlx/c++code/src/ServerSocket.cpp
-ServerSocket.h
-/home/zlx/zlx/c++code/src/ServerSocket.h
 sys/socket.h
 -
 iostream
@@ -29,4 +37,10 @@ string
 -
 thread
 -
+fstream
+-
+ServerSocket.h
+/home/zlx/zlx/c++code/src/ServerSocket.h
+YOLO.h
+/home/zlx/zlx/c++code/src/YOLO.h
 

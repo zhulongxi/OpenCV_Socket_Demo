@@ -6,6 +6,7 @@ src/CMakeFiles/source.dir/ClientSocket.cpp.o
  /home/zlx/zlx/c++code/src/ClientSocket.cpp
 src/CMakeFiles/source.dir/ServerSocket.cpp.o
  ../include/ServerSocket.h
+ ../include/YOLO.h
  /home/zlx/zlx/c++code/src/ServerSocket.cpp
 src/CMakeFiles/source.dir/YOLO.cpp.o
  ../include/YOLO.h

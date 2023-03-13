@@ -3,6 +3,9 @@
 
 #include <netinet/in.h> // sockaddr_in
 #include <string>
+
+#include "YOLO.h"
+
 class ServerSocket
 {
 private:
@@ -12,8 +15,8 @@ private:
 public:
     ServerSocket(std::string address, int port);
     ~ServerSocket();
-    void Receive();
-    void threadfunction(int connect_fd);
+    void Receive(YOLO* net);
+    void threadfunction(int connect_fd, YOLO* net);
 };
 
 #endif
